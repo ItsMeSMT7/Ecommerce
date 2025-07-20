@@ -4,3 +4,4 @@ pymongo
 dnspython
 gunicorn
 qrcode
+flask-cors
