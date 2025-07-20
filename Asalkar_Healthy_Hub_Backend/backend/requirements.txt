@@ -5,3 +5,4 @@ dnspython
 gunicorn
 qrcode
 flask-cors
+python-dotenv
