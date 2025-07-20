@@ -74,7 +74,7 @@
       </div>
     </div>
   </div>
-  <p class="back-to-home"><a href="homepage.html">← Back to Homepage</a></p>
+  <p class="back-to-home"><a href="index.html">← Back to Homepage</a></p>
 
 
   
@@ -110,7 +110,7 @@
             localStorage.setItem("userEmail", result.email);
             localStorage.setItem("userContact", result.contact);
             alert("Login successful!");
-            window.location.href = "homepage.html";
+            window.location.href = "index.html";
         } else {
             alert(result.message || "Login failed.");
         }
@@ -151,7 +151,7 @@
                 localStorage.setItem("userName", loginResult.name);
                 localStorage.setItem("userEmail", loginResult.email);
                 localStorage.setItem("userContact", loginResult.contact);
-                window.location.href = "homepage.html";
+                window.location.href = "index.html";
             } else {
                 // Handle the unlikely case where login fails right after signup
                 alert(loginResult.message || "Auto-login failed. Please try logging in manually.");

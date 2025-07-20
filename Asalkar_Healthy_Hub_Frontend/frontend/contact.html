@@ -26,7 +26,7 @@
     <!-- ✅ FIX: Replaced the static header with the dynamic one from homepage.html -->
     <header class="header">
         <div class="header-container">
-            <a href="homepage.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="../static/images/logo.jpg" alt="Asalkar Healthy Hub" />
                 <span>Asalkar Healthy Hub</span>
             </a>
@@ -173,9 +173,9 @@
                 const userName = localStorage.getItem('userName');
                 if (userName) {
                     navMenu.innerHTML = `
-                        <li><a href="homepage.html" class="nav-link">Home</a></li>
-                        <li><a href="homepage.html#products" class="nav-link">Products</a></li>
-                        <li><a href="homepage.html#about" class="nav-link">About</a></li>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="index.html#products" class="nav-link">Products</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
                         <li><a href="contact.html" class="nav-link">Contact</a></li>
                         <li><a href="my-orders.html" class="nav-link">My Orders</a></li>
                         <li><span class="nav-link" style="color: var(--accent);">Welcome, ${userName}</span></li>
@@ -185,13 +185,13 @@
                         e.preventDefault();
                         localStorage.clear();
                         alert('You have been logged out.');
-                        window.location.href = 'homepage.html';
+                        window.location.href = 'index.html';
                     });
                 } else {
                     navMenu.innerHTML = `
-                        <li><a href="homepage.html" class="nav-link">Home</a></li>
-                        <li><a href="homepage.html#products" class="nav-link">Products</a></li>
-                        <li><a href="homepage.html#about" class="nav-link">About</a></li>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="index.html#products" class="nav-link">Products</a></li>
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
                         <li><a href="contact.html" class="nav-link">Contact</a></li>
                         <li><a href="auth.html" class="nav-link auth-btn">Login / Sign Up</a></li>
                     `;
