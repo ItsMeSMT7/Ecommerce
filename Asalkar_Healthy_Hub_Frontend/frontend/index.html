@@ -173,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartEmptyMessage = document.querySelector('.cart-empty-message');
     const checkoutBtn = document.getElementById('checkoutBtn');
     
-    const API_BASE_URL = "http://localhost:5000";
+    const API_BASE_URL = "https://ecommerce-v5rr.onrender.com";
+
     let cart = JSON.parse(localStorage.getItem('userCart')) || [];
 
     // --- DYNAMIC CONTENT & AUTHENTICATION ---

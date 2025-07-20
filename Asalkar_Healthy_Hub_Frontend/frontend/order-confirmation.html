@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- CORE LOGIC ---
     async function initializeCheckout() {
-        const response = await fetch('http://localhost:5000/api/user/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: userEmail }) });
+        const response = await fetch('https://ecommerce-v5rr.onrender.com/api/user/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: userEmail }) });
         const data = await response.json();
         loadingContainer.classList.add('hidden');
         mainContainer.classList.remove('hidden');

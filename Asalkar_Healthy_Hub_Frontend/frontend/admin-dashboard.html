@@ -185,7 +185,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // --- GLOBAL VARIABLES & CONSTANTS ---
-  const baseUrl = "http://localhost:5000/api";
+  const baseUrl = "https://ecommerce-v5rr.onrender.com/api";
+
   let allFetchedOrders = []; // Single source of truth for all orders
 
   // --- ELEMENT SELECTORS ---
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${index + 1}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td>
-        <td><img src="http://localhost:5000/static${p.image}" width="50" /></td><td>${p.description}</td>
+        <td><img src="https://ecommerce-v5rr.onrender.com/static${p.image}" width="50" /></td><td>${p.description}</td>
         <td class="${p.stock <= 5 ? 'low-stock' : ''}">${p.stock}</td>
         <td><button onclick='editProduct(${JSON.stringify(p)})'>✏️</button><button class="delete-btn" onclick='deleteProduct("${p._id}")'>🗑️</button></td>`;
       productTableBody.appendChild(row);
