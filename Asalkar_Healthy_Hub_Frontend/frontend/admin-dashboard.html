@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard - Asalkar Healthy Hub</title>
-  <link rel="icon" href="../static/images/logo.jpg">
+  <link rel="icon" href="images/logo.jpg">
   <!-- <link rel="stylesheet" href="../static/style.css"> --><!-- This is not needed for the admin panel layout -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -80,7 +80,7 @@
   
   <div class="sidebar">
     <div> <!-- Wrapper for top items -->
-      <img src="../static/images/logo.jpg" alt="Asalkar Healthy Hub Logo" class="sidebar-logo">
+      <img src="images/logo.jpg" alt="Asalkar Healthy Hub Logo" class="sidebar-logo">
       <h2>Admin Panel</h2>
       <a href="#inquiries-section">💬 Customer Inquiries</a>
       <a href="#pending-orders-section">🚨 Pending Orders</a>
@@ -185,7 +185,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // --- GLOBAL VARIABLES & CONSTANTS ---
-  const baseUrl = "http://localhost:5000/api";
+  const baseUrl = "https://ecommerce-v5rr.onrender.com/api";
+
   let allFetchedOrders = []; // Single source of truth for all orders
 
   // --- ELEMENT SELECTORS ---
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td>${index + 1}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td>
-        <td><img src="http://localhost:5000/static${p.image}" width="50" /></td><td>${p.description}</td>
+        <td><img src="https://ecommerce-v5rr.onrender.com/static${p.image}" width="50" /></td><td>${p.description}</td>
         <td class="${p.stock <= 5 ? 'low-stock' : ''}">${p.stock}</td>
         <td><button onclick='editProduct(${JSON.stringify(p)})'>✏️</button><button class="delete-btn" onclick='deleteProduct("${p._id}")'>🗑️</button></td>`;
       productTableBody.appendChild(row);

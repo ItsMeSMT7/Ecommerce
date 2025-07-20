@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Confirm Your Order - Asalkar Healthy Hub</title>
-  <link rel="stylesheet" href="../static/style.css">
-  <link rel="icon" href="../static/images/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
@@ -30,7 +30,7 @@
   <!-- ✅ 1. ADD THE PRELOADER HTML -->
     <div class="preloader">
         <div class="logo-loader">
-            <img src="../static/images/logo.jpg" alt="Asalkar Healthy Hub Loading...">
+            <img src="images/logo.jpg" alt="Asalkar Healthy Hub Loading...">
         </div>
         <p class="loader-text">Order confirmation...</p>
     </div>
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- CORE LOGIC ---
     async function initializeCheckout() {
-        const response = await fetch('http://localhost:5000/api/user/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: userEmail }) });
+        const response = await fetch('https://ecommerce-v5rr.onrender.com/api/user/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: userEmail }) });
         const data = await response.json();
         loadingContainer.classList.add('hidden');
         mainContainer.classList.remove('hidden');
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
         responseMsgDiv.textContent = 'Placing order...';
         const orderData = { name: nameToSubmit, contact: contactToSubmit, email: emailToSubmit, address: addressToSubmit, items: JSON.parse(localStorage.getItem("userCart") || "[]"), latitude: finalLocation.lat, longitude: finalLocation.lng, payment: paymentSelect.value };
         try {
-            const res = await fetch("http://localhost:5000/api/order/place", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(orderData) });
+            const res = await fetch("https://ecommerce-v5rr.onrender.com/api/order/place", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(orderData) });
             const result = await res.json();
             if (!result.success) throw new Error(result.message);
             responseMsgDiv.style.color = 'green';
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
            // ✅ 2. ADD THE UNIQUE ID TO THE URL
             // We now include the 'refId' parameter in the request to the backend.
-            const qrUrl = `http://localhost:5000/generate_qr?upi_id=${encodeURIComponent(upiId)}&name=${encodeURIComponent(payeeName)}&amount=${total.toFixed(2)}&refId=${encodeURIComponent(transactionRefId)}`;
+            const qrUrl = `https://ecommerce-v5rr.onrender.com/generate_qr?upi_id=${encodeURIComponent(upiId)}&name=${encodeURIComponent(payeeName)}&amount=${total.toFixed(2)}&refId=${encodeURIComponent(transactionRefId)}`;
             
             // For debugging: This will show you the exact URL being requested in the browser console (F12)
         console.log("DEBUG: Requesting QR Code from URL:", qrUrl);
