@@ -132,7 +132,7 @@
 
       try {
         // Step 1: Attempt to register the new user
-        const signupResponse = await fetch("http://localhost:5000/api/signup", {
+        const signupResponse = await fetch("https://ecommerce-v5rr.onrender.com/api/signup", {
             method: "POST",
             body: formData
         });
@@ -142,7 +142,7 @@
         if (signupResult.success) {
             alert("Signup successful! Logging you in now...");
 
-            const loginResponse = await fetch("http://localhost:5000/api/login", {
+            const loginResponse = await fetch("https://ecommerce-v5rr.onrender.com/api/login", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `identifier=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`

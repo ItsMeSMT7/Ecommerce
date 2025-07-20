@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
         responseMsgDiv.textContent = 'Placing order...';
         const orderData = { name: nameToSubmit, contact: contactToSubmit, email: emailToSubmit, address: addressToSubmit, items: JSON.parse(localStorage.getItem("userCart") || "[]"), latitude: finalLocation.lat, longitude: finalLocation.lng, payment: paymentSelect.value };
         try {
-            const res = await fetch("http://localhost:5000/api/order/place", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(orderData) });
+            const res = await fetch("https://ecommerce-v5rr.onrender.com/api/order/place", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(orderData) });
             const result = await res.json();
             if (!result.success) throw new Error(result.message);
             responseMsgDiv.style.color = 'green';
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
            // ✅ 2. ADD THE UNIQUE ID TO THE URL
             // We now include the 'refId' parameter in the request to the backend.
-            const qrUrl = `http://localhost:5000/generate_qr?upi_id=${encodeURIComponent(upiId)}&name=${encodeURIComponent(payeeName)}&amount=${total.toFixed(2)}&refId=${encodeURIComponent(transactionRefId)}`;
+            const qrUrl = `https://ecommerce-v5rr.onrender.com/generate_qr?upi_id=${encodeURIComponent(upiId)}&name=${encodeURIComponent(payeeName)}&amount=${total.toFixed(2)}&refId=${encodeURIComponent(transactionRefId)}`;
             
             // For debugging: This will show you the exact URL being requested in the browser console (F12)
         console.log("DEBUG: Requesting QR Code from URL:", qrUrl);
