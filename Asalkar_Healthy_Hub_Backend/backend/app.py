@@ -11,7 +11,7 @@ from urllib.parse import quote  # ✅ ADD THIS NEW IMPORT
 app = Flask(__name__, static_folder="../static")
 
 # ✅ Apply CORS to the entire app
-CORS(app, origins=["https://ecommerce-brown-xi.vercel.app"])
+CORS(app, origins=["*"]) 
 
 # ✅ Set upload folder path
 app.config['UPLOAD_FOLDER'] = 'static/images/products'
