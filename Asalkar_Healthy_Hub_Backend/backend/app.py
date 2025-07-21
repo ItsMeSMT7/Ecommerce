@@ -58,7 +58,8 @@ def generate_qr():
 
 @app.route("/")
 def home():
-    return "✅ Asalkar Healthy Hub Backend Running"
+    send_from_directory("Asalkar_Healthy_Hub_Frontend\frontend\index.html","index.html")
+    return
 
 if __name__ == "__main__":
     # Ensure the upload folder exists when the app starts
