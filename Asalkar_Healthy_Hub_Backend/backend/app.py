@@ -6,12 +6,12 @@ import os
 from flask import request, send_file, Flask
 from flask_cors import CORS  # Make sure this import is here
 from urllib.parse import quote  # ✅ ADD THIS NEW IMPORT
-
+frontend_origin = os.getenv("FRONTEND_ORIGIN", "*")
 # Initialize the Flask app as before
 app = Flask(__name__, static_folder="../static")
 
 # ✅ Apply CORS to the entire app
-CORS(app, origins=["*"]) 
+CORS(app, origins=[frontend_origin])
 
 # ✅ Set upload folder path
 app.config['UPLOAD_FOLDER'] = 'static/images/products'
